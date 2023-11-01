@@ -1,0 +1,39 @@
+.flex {
+    display: flex;
+}
+
+.history-container {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.history-header {
+    border: 1px solid rgba(162, 156, 156, 0.677);
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgba(162, 156, 156, 0.077);
+    justify-content: space-around;
+}
+
+.history-header-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgba(162, 156, 156, 0.677);
+}
+
+.history-box {
+    border: 1px solid rgba(162, 156, 156, 0.677);
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.history-users .profile-container {
+    width: 100%;
+}
+
+.history-query {
+    position: relative;
+    top: 5rem;
+}

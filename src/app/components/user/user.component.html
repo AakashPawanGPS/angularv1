@@ -1,0 +1,12 @@
+<div class="profile-container flex" [ngClass]="{'full-width' : router.url.includes('history')}">
+    <div>
+        <label>User Image</label>
+        <div>
+            <img class="profile-image border-1" [src]="user.avatar_url" alt="">
+        </div>
+    </div>
+    <div>
+        <label>GitHub User Name</label>
+        <p>{{user.login}}</p>
+    </div>
+</div>

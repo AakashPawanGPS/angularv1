@@ -1,0 +1,24 @@
+<div class="text-center history-container">
+    <h2 class="h3 m-5 text-secondary">Your Search History</h2>
+    <div *ngIf="!hasHistory()">
+        <p class="text-secondary">No Search History Found </p>
+    </div>
+    <div *ngIf="hasHistory()">
+        <div class="flex history-header pt-2 pb-2">
+            <p class="history-header-title">Search Term</p>
+            <p class="history-header-title">Search Results</p>
+        </div>
+        <div *ngFor="let query of getObjectKeys(searchHistory)" class="flex history-box justify-content-between">
+            <div class="history-query">
+                <p>{{query}}</p>
+            </div>
+            <div class="history-items">
+                <div class="history-users" *ngFor="let user of searchHistory[query]">
+                    <app-user [user]="user"></app-user>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button *ngIf="hasHistory()" class="btn btn-success mt-5" (click)="clearSearchHistory()">Clear Search
+        History</button>
+</div>

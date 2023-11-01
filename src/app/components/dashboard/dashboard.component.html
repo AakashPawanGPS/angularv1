@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+        <li [ngClass]="{'active' : router.url.includes('home')}" (click)="toggleComponents()"><a class="text-secondary"
+                routerLink="/home">Home</a></li>
+        <li [ngClass]="{'active' : router.url.includes('history')}" (click)="toggleComponents()"><a
+                class="text-secondary" routerLink="/history">History</a></li>
+    </ul>
+</nav>
+<div *ngIf="showHomeComponent || !showHistoryComponent">
+    <app-home></app-home>
+</div>
+<div *ngIf="showHistoryComponent || router.url.includes('history')">
+    <app-history></app-history>
+</div>

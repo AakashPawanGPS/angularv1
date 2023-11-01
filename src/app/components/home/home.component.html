@@ -1,0 +1,16 @@
+<div class="align-center text-secondary">
+    <p class="h3 m-5 text-secondary">Search GitHub User</p>
+    <div class="main w-25">
+        <div class="form-group has-search">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input [(ngModel)]="searchQuery" type="text" class="form-control" placeholder="Search">
+        </div>
+    </div>
+    <button class="btn btn-success w-25" [disabled]="!searchQuery" (click)="searchUsers(searchQuery)">Search</button>
+    <p class="mt-5 results" *ngIf="users.length > 0">Search Results</p>
+    <div class="profiles align-center">
+        <div class="user-card" *ngFor="let user of users">
+            <app-user [user]="user"></app-user>
+        </div>
+    </div>
+</div>
