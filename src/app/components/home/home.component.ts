@@ -10,10 +10,10 @@ export class HomeComponent {
   searchQuery: string = '';
   queryCache: any = {};
   users: any[] = [];
+  isSearched: boolean = false;
   constructor(private httpService: HttpService) { }
   searchUsers(query: string) {
     const queryCache = JSON.parse(localStorage.getItem('queryCache') || '{}') as { [key: string]: any };
-
     if (queryCache[query]) {
       this.users = queryCache[query];
       this.searchQuery = '';
@@ -24,9 +24,8 @@ export class HomeComponent {
       this.users = data.items;
       queryCache[query] = this.users;
       localStorage.setItem('queryCache', JSON.stringify(queryCache));
+      this.isSearched = true;
     });
-
-    this.searchQuery = '';
   }
 
 }

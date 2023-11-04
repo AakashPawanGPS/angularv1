@@ -7,10 +7,15 @@
         </div>
     </div>
     <button class="btn btn-success w-25" [disabled]="!searchQuery" (click)="searchUsers(searchQuery)">Search</button>
-    <p class="mt-5 results" *ngIf="users.length > 0">Search Results</p>
-    <div class="profiles align-center">
-        <div class="user-card" *ngFor="let user of users">
-            <app-user [user]="user"></app-user>
+    <div *ngIf="users.length">
+        <p class="mt-5 results" *ngIf="users.length > 0">Search Results</p>
+        <div class="profiles align-center">
+            <div class="user-card" *ngFor="let user of users">
+                <app-user [user]="user"></app-user>
+            </div>
         </div>
+    </div>
+    <div class="no-results" *ngIf="!users.length && isSearched">
+        <p>Search Result Not Found</p>
     </div>
 </div>

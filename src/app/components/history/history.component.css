@@ -33,7 +33,21 @@
     width: 100%;
 }
 
+.history-query p {
+    margin-left: 20px;
+}
+
 .history-query {
-    position: relative;
+    position: sticky;
     top: 5rem;
+}
+
+
+.overflow-none {
+    overflow: hidden;
+}
+
+.align-center {
+    display: inline-flex;
+    align-items: center;
 }
