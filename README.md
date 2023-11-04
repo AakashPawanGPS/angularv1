@@ -23,3 +23,11 @@ The app also shows the search history of the last recent searches which can be c
 The app uses localstorage as cache to avoid cached calls.
 
 The Working version of the application is deployed on [https://aakash-pawan-angular.netlify.app/](https://aakash-pawan-angular.netlify.app/)
+
+For fetching data, The app uses `http.service`
+
+The app contains ` dashboard, home, history and user components`
+
+The user component has a model `( avatar_url : string , login : string )`
+
+This user component is being reused on home and history components
